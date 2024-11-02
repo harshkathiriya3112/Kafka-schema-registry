@@ -1,0 +1,49 @@
+import com.github.davidmc24.gradle.plugin.avro.GenerateAvroJavaTask
+
+plugins {
+    id 'org.springframework.boot' version '3.2.1' // Use the latest version
+    id 'io.spring.dependency-management' version '1.1.0'
+    id 'java'
+    id "com.github.davidmc24.gradle.plugin.avro" version "1.9.1"// Apply the Avro plugin with version
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven{
+        url 'https://packages.confluent.io/maven/'
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+    implementation 'org.springframework.boot:spring-boot-starter-web' // Spring Web dependency
+    implementation 'org.springframework.kafka:spring-kafka' // Kafka dependency
+    testImplementation 'org.springframework.boot:spring-boot-starter-test' // Optional for testing
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+
+    // Spring Kafka Test dependency
+    testImplementation 'org.springframework.kafka:spring-kafka-test'
+
+    // Confluent Kafka Avro serializer and schema registry client
+    implementation 'io.confluent:kafka-avro-serializer:7.4.0'
+    implementation 'io.confluent:kafka-schema-registry-client:7.4.0'
+    implementation 'org.apache.avro:avro:1.12.0'
+
+    // Avro dependency
+    implementation 'org.apache.avro:avro:1.11.0'
+}
+
+def generateAvro = tasks.register("generateAvro", GenerateAvroJavaTask) {
+    source("src/main/resources")
+    outputDir = file("src/main/java")
+}
+
+test {
+    useJUnitPlatform()
+}
