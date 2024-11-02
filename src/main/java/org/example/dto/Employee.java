@@ -14,10 +14,10 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class Employee extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -1858791870713000726L;
+  private static final long serialVersionUID = 1750591058999483151L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Employee\",\"namespace\":\"org.example.dto\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"firstName\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"middleName\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"},{\"name\":\"lastName\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"emailId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Employee\",\"namespace\":\"org.example.dto\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"},{\"name\":\"firstName\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"middleName\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"},{\"name\":\"lastName\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"removed_id_and_email_id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"default\":\"\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -77,7 +77,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
   private java.lang.String firstName;
   private java.lang.String middleName;
   private java.lang.String lastName;
-  private java.lang.String emailId;
+  private java.lang.String removed_id_and_email_id;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -92,14 +92,14 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
    * @param firstName The new value for firstName
    * @param middleName The new value for middleName
    * @param lastName The new value for lastName
-   * @param emailId The new value for emailId
+   * @param removed_id_and_email_id The new value for removed_id_and_email_id
    */
-  public Employee(java.lang.String id, java.lang.String firstName, java.lang.String middleName, java.lang.String lastName, java.lang.String emailId) {
+  public Employee(java.lang.String id, java.lang.String firstName, java.lang.String middleName, java.lang.String lastName, java.lang.String removed_id_and_email_id) {
     this.id = id;
     this.firstName = firstName;
     this.middleName = middleName;
     this.lastName = lastName;
-    this.emailId = emailId;
+    this.removed_id_and_email_id = removed_id_and_email_id;
   }
 
   @Override
@@ -116,7 +116,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
     case 1: return firstName;
     case 2: return middleName;
     case 3: return lastName;
-    case 4: return emailId;
+    case 4: return removed_id_and_email_id;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -130,7 +130,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
     case 1: firstName = value$ != null ? value$.toString() : null; break;
     case 2: middleName = value$ != null ? value$.toString() : null; break;
     case 3: lastName = value$ != null ? value$.toString() : null; break;
-    case 4: emailId = value$ != null ? value$.toString() : null; break;
+    case 4: removed_id_and_email_id = value$ != null ? value$.toString() : null; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -204,20 +204,20 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
   }
 
   /**
-   * Gets the value of the 'emailId' field.
-   * @return The value of the 'emailId' field.
+   * Gets the value of the 'removed_id_and_email_id' field.
+   * @return The value of the 'removed_id_and_email_id' field.
    */
-  public java.lang.String getEmailId() {
-    return emailId;
+  public java.lang.String getRemovedIdAndEmailId() {
+    return removed_id_and_email_id;
   }
 
 
   /**
-   * Sets the value of the 'emailId' field.
+   * Sets the value of the 'removed_id_and_email_id' field.
    * @param value the value to set.
    */
-  public void setEmailId(java.lang.String value) {
-    this.emailId = value;
+  public void setRemovedIdAndEmailId(java.lang.String value) {
+    this.removed_id_and_email_id = value;
   }
 
   /**
@@ -265,7 +265,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
     private java.lang.String firstName;
     private java.lang.String middleName;
     private java.lang.String lastName;
-    private java.lang.String emailId;
+    private java.lang.String removed_id_and_email_id;
 
     /** Creates a new Builder */
     private Builder() {
@@ -294,8 +294,8 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
         this.lastName = data().deepCopy(fields()[3].schema(), other.lastName);
         fieldSetFlags()[3] = other.fieldSetFlags()[3];
       }
-      if (isValidValue(fields()[4], other.emailId)) {
-        this.emailId = data().deepCopy(fields()[4].schema(), other.emailId);
+      if (isValidValue(fields()[4], other.removed_id_and_email_id)) {
+        this.removed_id_and_email_id = data().deepCopy(fields()[4].schema(), other.removed_id_and_email_id);
         fieldSetFlags()[4] = other.fieldSetFlags()[4];
       }
     }
@@ -322,8 +322,8 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
         this.lastName = data().deepCopy(fields()[3].schema(), other.lastName);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.emailId)) {
-        this.emailId = data().deepCopy(fields()[4].schema(), other.emailId);
+      if (isValidValue(fields()[4], other.removed_id_and_email_id)) {
+        this.removed_id_and_email_id = data().deepCopy(fields()[4].schema(), other.removed_id_and_email_id);
         fieldSetFlags()[4] = true;
       }
     }
@@ -489,41 +489,41 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
     }
 
     /**
-      * Gets the value of the 'emailId' field.
+      * Gets the value of the 'removed_id_and_email_id' field.
       * @return The value.
       */
-    public java.lang.String getEmailId() {
-      return emailId;
+    public java.lang.String getRemovedIdAndEmailId() {
+      return removed_id_and_email_id;
     }
 
 
     /**
-      * Sets the value of the 'emailId' field.
-      * @param value The value of 'emailId'.
+      * Sets the value of the 'removed_id_and_email_id' field.
+      * @param value The value of 'removed_id_and_email_id'.
       * @return This builder.
       */
-    public org.example.dto.Employee.Builder setEmailId(java.lang.String value) {
+    public org.example.dto.Employee.Builder setRemovedIdAndEmailId(java.lang.String value) {
       validate(fields()[4], value);
-      this.emailId = value;
+      this.removed_id_and_email_id = value;
       fieldSetFlags()[4] = true;
       return this;
     }
 
     /**
-      * Checks whether the 'emailId' field has been set.
-      * @return True if the 'emailId' field has been set, false otherwise.
+      * Checks whether the 'removed_id_and_email_id' field has been set.
+      * @return True if the 'removed_id_and_email_id' field has been set, false otherwise.
       */
-    public boolean hasEmailId() {
+    public boolean hasRemovedIdAndEmailId() {
       return fieldSetFlags()[4];
     }
 
 
     /**
-      * Clears the value of the 'emailId' field.
+      * Clears the value of the 'removed_id_and_email_id' field.
       * @return This builder.
       */
-    public org.example.dto.Employee.Builder clearEmailId() {
-      emailId = null;
+    public org.example.dto.Employee.Builder clearRemovedIdAndEmailId() {
+      removed_id_and_email_id = null;
       fieldSetFlags()[4] = false;
       return this;
     }
@@ -537,7 +537,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
         record.firstName = fieldSetFlags()[1] ? this.firstName : (java.lang.String) defaultValue(fields()[1]);
         record.middleName = fieldSetFlags()[2] ? this.middleName : (java.lang.String) defaultValue(fields()[2]);
         record.lastName = fieldSetFlags()[3] ? this.lastName : (java.lang.String) defaultValue(fields()[3]);
-        record.emailId = fieldSetFlags()[4] ? this.emailId : (java.lang.String) defaultValue(fields()[4]);
+        record.removed_id_and_email_id = fieldSetFlags()[4] ? this.removed_id_and_email_id : (java.lang.String) defaultValue(fields()[4]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -578,7 +578,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
 
     out.writeString(this.lastName);
 
-    out.writeString(this.emailId);
+    out.writeString(this.removed_id_and_email_id);
 
   }
 
@@ -595,7 +595,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
 
       this.lastName = in.readString();
 
-      this.emailId = in.readString();
+      this.removed_id_and_email_id = in.readString();
 
     } else {
       for (int i = 0; i < 5; i++) {
@@ -617,7 +617,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
           break;
 
         case 4:
-          this.emailId = in.readString();
+          this.removed_id_and_email_id = in.readString();
           break;
 
         default:

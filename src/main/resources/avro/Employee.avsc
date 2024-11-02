@@ -5,7 +5,8 @@
   "fields": [
     {
       "name": "id",
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     {
       "name": "firstName",
@@ -21,7 +22,7 @@
       "type": "string"
     },
     {
-      "name": "emailId",
+      "name": "removed_id_and_email_id",
       "type": "string",
       "default": ""
     }

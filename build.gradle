@@ -40,7 +40,7 @@ dependencies {
 }
 
 def generateAvro = tasks.register("generateAvro", GenerateAvroJavaTask) {
-    source("src/main/resources")
+    source("src/main/resources/avro")
     outputDir = file("src/main/java")
 }
 
